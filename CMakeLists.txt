@@ -11,4 +11,6 @@ add_executable(june
     src/Main.cpp
     src/core/June.cpp)
 
-target_include_directories(june PRIVATE $(PROJECT_SOURCE_DIR)/include)
+target_include_directories(june 
+    PRIVATE 
+    $(PROJECT_SOURCE_DIR)/include)
