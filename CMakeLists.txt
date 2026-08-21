@@ -7,4 +7,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-add_executable(june src/main.cpp)
+add_executable(june 
+    src/Main.cpp
+    src/core/June.cpp)
+
+target_include_directories(june PRIVATE $(PROJECT_SOURCE_DIR)/include)
