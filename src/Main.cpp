@@ -7,10 +7,24 @@ J.U.N.E
 Start Date: 08/19/2026
 */
 
+#include "raylib.h"
+
 #include "june/core/June.h"
+#include "june/network/LlamaServer.h"
 
 int main() {
-    june::June june;
-    june.run();
+    june::LlamaServer server;
+    auto server_init_status = server.init();
+
+    InitWindow(1280, 720, "June");
+    while (!WindowShouldClose())
+    {
+        BeginDrawing();
+        ClearBackground(BLACK);
+        DrawText("June", 50, 50, 40, WHITE);
+        EndDrawing();
+    }
+    server.shutdown();
+    CloseWindow();
     return 0;
 }

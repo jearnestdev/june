@@ -1,3 +1,12 @@
 [submodule "external/llama.cpp"]
 	path = external/llama.cpp
 	url = https://www.github.com/ggerganov/llama.cpp.git
+[submodule "external/raylib"]
+	path = external/raylib
+	url = https://github.com/raysan5/raylib.git
+[submodule "external/cpp-httplib"]
+	path = external/cpp-httplib
+	url = https://github.com/yhirose/cpp-httplib.git
+[submodule "external/json"]
+	path = external/json
+	url = https://github.com/nlohmann/json.git
