@@ -17,6 +17,8 @@ add_executable(june
     src/Main.cpp
     src/core/June.cpp
     src/network/LlamaServer.cpp
+    src/network/LlamaClient.cpp
+    src/network/LlamaBackend.cpp
 )
 
 target_include_directories(june 

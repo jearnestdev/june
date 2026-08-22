@@ -1,45 +1,28 @@
 #pragma once
 
-#include <cstdio>
 #include <expected>
-#include <print>
-#include <signal.h>
-#include <sys/wait.h>
 #include <unistd.h>
 
 namespace june
 {
     enum class LlamaServerError
     {
+        PipeFailed,
         ForkFailed,
-        //ExecFailed,
-        //KillFailed
-    };
-
-    enum class LlamaServerState
-    {
-        NotRunning,
-        Starting,
-        Running,
-        Stopping,
-        Stopped,
-        Error
+        ExecFailed,
+        KillFailed,
     };
 
     class LlamaServer
     {
         public:
             // Create the forked llama server process and boot it up.
-            std::expected<void, LlamaServerError> init();
+            std::expected<void, LlamaServerError> start();
             // Kill the llama server process and clean up.
-            std::expected<void, LlamaServerError> shutdown();
+            std::expected<void, LlamaServerError> stop();
 
-            // Get current state of the llama server.
-            LlamaServerState getState() const;
         private:
             // Process ID of the llama server.
             pid_t m_pid = -1;
-            // State the server is currently in.
-            LlamaServerState m_state = LlamaServerState::NotRunning;
     };
 }
